@@ -4,7 +4,15 @@ class CMyCurve :
 	public CMyShape
 {
 public:
+
+	CList<CPoint> pts;
+
 	CMyCurve();
 	~CMyCurve();
+
+	virtual void draw(CDC & dc);
+	virtual void set_mouse_down(CPoint pt);
+	virtual void set_mouse_up(CPoint pt);
+	virtual void set_mouse_move(CPoint pt);
 };
 

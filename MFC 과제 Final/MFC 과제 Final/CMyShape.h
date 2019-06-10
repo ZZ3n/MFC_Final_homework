@@ -2,16 +2,17 @@
 class CMyShape
 {
 public:
+
+	enum {RECT,CIRCLE,CURVE,STAR};
+
 	CMyShape();
 	~CMyShape();
 
 	CBrush m_brush;
 	CPen m_pen;
 	COLORREF m_color;
-
+	COLORREF m_out_color;
 	int r, g, b;
-
-	static int num_shape;
 
 	virtual void draw(CDC & dc);
 	virtual void set_mouse_down(CPoint pt) = 0;
