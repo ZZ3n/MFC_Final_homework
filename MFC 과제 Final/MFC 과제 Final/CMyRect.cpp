@@ -33,3 +33,73 @@ void CMyRect::set_mouse_move(CPoint pt)
 {
 	m_pt2 = pt;
 }
+bool CMyRect::if_inner(CPoint pt)
+{
+	CPoint lt, rb; // lefttop,rightbottom
+
+	if (m_pt1.x < m_pt2.x)
+	{
+		lt.x = m_pt1.x;
+		rb.x = m_pt2.x;
+	}
+	else
+	{
+		lt.x = m_pt2.x;
+		rb.x = m_pt1.x;
+	}
+
+	if (m_pt1.y > m_pt2.y)
+	{
+		lt.y = m_pt1.y;
+		rb.x = m_pt2.x;
+	}
+	else
+	{
+		lt.y = m_pt2.y;
+		rb.y = m_pt1.y;
+	}
+
+	if (pt.x >= lt.x && pt.x <= rb.x && pt.y >= rb.y && pt.y <= lt.y)
+	{
+		return true;
+	}
+	else
+		return false;
+}
+void CMyRect::selected_rect(CDC & dc)
+{
+	CPoint lt, rb; // lefttop,rightbottom
+
+	if (m_pt1.x < m_pt2.x)
+	{
+		lt.x = m_pt1.x;
+		rb.x = m_pt2.x;
+	}
+	else
+	{
+		lt.x = m_pt2.x;
+		rb.x = m_pt1.x;
+	}
+
+	if (m_pt1.y > m_pt2.y)
+	{
+		lt.y = m_pt1.y;
+		rb.x = m_pt2.x;
+	}
+	else
+	{
+		lt.y = m_pt2.y;
+		rb.y = m_pt1.y;
+	}
+
+	CPen tmppen;
+	tmppen.CreatePen(PS_DOT, 1, RGB(255, 0, 0));
+	dc.SelectObject(tmppen);
+
+	CBrush tmpbrush;
+	tmpbrush.CreateStockObject(NULL_BRUSH);
+	dc.SelectObject(tmpbrush);
+	
+	dc.Rectangle(lt.x - 5, lt.y + 5, rb.x + 5, rb.y - 5);
+	
+}

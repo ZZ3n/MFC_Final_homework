@@ -57,3 +57,27 @@ void CMyStar::set_mouse_move(CPoint pt)
 	radius = sqrt((pt.x - pivot.x) * (pt.x - pivot.x)
 		+ (pt.y - pivot.y) * (pt.y - pivot.y));
 }
+bool CMyStar::if_inner(CPoint pt)
+{
+	CRgn rgn;
+	rgn.CreatePolygonRgn(pts, 11, WINDING);
+	return rgn.PtInRegion(pt);
+}
+void CMyStar::selected_rect(CDC & dc)
+{
+	CPen tmppen;
+	tmppen.CreatePen(PS_DOT, 1, RGB(255, 0, 0));
+	dc.SelectObject(tmppen);
+
+	CBrush tmpbrush;
+	tmpbrush.CreateStockObject(NULL_BRUSH);
+	dc.SelectObject(tmpbrush);
+
+	CPoint lt, rb;
+	lt.y = pts[5].y - 5;
+	lt.x = pts[7].x - 5;
+	rb.y = pts[1].y + 5;
+	rb.x = pts[3].x + 5;
+
+	dc.Rectangle(lt.x,lt.y,rb.x,rb.y);
+}
