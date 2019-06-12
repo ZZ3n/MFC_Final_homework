@@ -216,8 +216,11 @@
     <None Include="res\MFCFinal.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\new_toolbar.bmp" />
     <Image Include="res\MFC 과제 Final.ico" />
     <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="명세서.txt" />
