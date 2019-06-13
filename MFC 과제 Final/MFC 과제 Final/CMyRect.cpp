@@ -96,10 +96,12 @@ void CMyRect::selected_rect(CDC & dc)
 	tmppen.CreatePen(PS_DOT, 1, RGB(255, 0, 0));
 	dc.SelectObject(tmppen);
 
+	int SPACE = 8;
+
 	CBrush tmpbrush;
 	tmpbrush.CreateStockObject(NULL_BRUSH);
 	dc.SelectObject(tmpbrush);
 	
-	dc.Rectangle(lt.x - 5, lt.y + 5, rb.x + 5, rb.y - 5);
+	dc.Rectangle(lt.x - SPACE, lt.y + SPACE, rb.x + SPACE, rb.y - SPACE);
 	
 }
