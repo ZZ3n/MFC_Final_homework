@@ -22,11 +22,25 @@ void CMyGroup::setting_lt_rb()
 	}
 }
 
+CMyGroup::CMyGroup(CMyGroup & G, CMyGroup & H)
+{
+	POSITION pos;
+	pos = this->nodes.GetHeadPosition();
+	this->nodes.AddTail(&G.nodes);
+	this->nodes.AddTail(&H.nodes);
+	this->setting_lt_rb();
+	this->g_selected = true;
+	delete &G;
+	delete &H;
+}
+
 CMyGroup::CMyGroup()
+	:g_selected(false)
 {
 }
 
 CMyGroup::CMyGroup(CMyShape * new_node)
+	:g_selected(false)
 {
 	this -> nodes.AddTail(new_node);
 	setting_lt_rb();
