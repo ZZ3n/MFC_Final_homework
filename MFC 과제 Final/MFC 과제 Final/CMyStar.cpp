@@ -84,8 +84,15 @@ void CMyStar::selected_rect(CDC & dc)
 
 void CMyStar::get_lt_rb(CPoint & lt, CPoint & rb)
 {
-	lt.y = pts[5].y - 5;
+	lt.y = pts[1].y + 5;
 	lt.x = pts[7].x - 5;
-	rb.y = pts[1].y + 5;
+
+	rb.y = pts[5].y - 5;
 	rb.x = pts[3].x + 5;
+
+}
+
+void CMyStar::Move_To(CPoint pt)
+{
+	pivot += pt;
 }

@@ -122,7 +122,7 @@ void CMyRect::get_lt_rb(CPoint & lt, CPoint & rb)
 	if (m_pt1.y > m_pt2.y)
 	{
 		lt.y = m_pt1.y;
-		rb.x = m_pt2.x;
+		rb.y = m_pt2.y;
 	}
 	else
 	{
@@ -132,4 +132,10 @@ void CMyRect::get_lt_rb(CPoint & lt, CPoint & rb)
 
 	lt.x -= SPACE; lt.y += SPACE;
 	rb.x += SPACE; rb.y -= SPACE;
+}
+
+void CMyRect::Move_To(CPoint pt)
+{
+	m_pt1 += pt;
+	m_pt2 += pt;
 }

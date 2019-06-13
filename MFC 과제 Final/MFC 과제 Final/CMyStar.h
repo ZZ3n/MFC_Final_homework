@@ -19,6 +19,7 @@ public:
 	virtual bool if_inner(CPoint pt);
 	virtual void selected_rect(CDC & dc);
 	virtual void get_lt_rb(CPoint & lt, CPoint & rb);
+	virtual void Move_To(CPoint pt);
 };
 
 

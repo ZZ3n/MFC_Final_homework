@@ -151,3 +151,13 @@ void CMyCurve::get_lt_rb(CPoint & lt, CPoint & rb)
 	rb.x += 8;	rb.y -= 8;
 
 }
+
+void CMyCurve::Move_To(CPoint pt)
+{
+	POSITION pos = pts.GetHeadPosition();
+	while (pos != NULL)
+	{
+		pts.GetAt(pos) += pt;
+		pts.GetNext(pos);
+	}
+}

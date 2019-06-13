@@ -15,11 +15,27 @@ void CMyGroup::setting_lt_rb()
 			LT.y = _lt.y;
 		if (_lt.x <= LT.x)
 			LT.x = _lt.x;
+
 		if (_rb.y <= RB.y)
 			RB.y = _rb.y;
 		if (_rb.x >= RB.x)
 			RB.x = _rb.x;
 	}
+}
+
+void CMyGroup::selected_group_rect(CDC & dc)
+{
+	setting_lt_rb();
+
+	CPen tmppen;
+	tmppen.CreatePen(PS_DOT, 1, RGB(255, 0, 0));
+	dc.SelectObject(tmppen);
+
+	CBrush tmpbrush;
+	tmpbrush.CreateStockObject(NULL_BRUSH);
+	dc.SelectObject(tmpbrush);
+
+	dc.Rectangle(LT.x, LT.y, RB.x, RB.y);
 }
 
 CMyGroup::CMyGroup(CMyGroup & G, CMyGroup & H)
@@ -30,8 +46,6 @@ CMyGroup::CMyGroup(CMyGroup & G, CMyGroup & H)
 	this->nodes.AddTail(&H.nodes);
 	this->setting_lt_rb();
 	this->g_selected = true;
-	delete &G;
-	delete &H;
 }
 
 CMyGroup::CMyGroup()
@@ -43,7 +57,6 @@ CMyGroup::CMyGroup(CMyShape * new_node)
 	:g_selected(false)
 {
 	this -> nodes.AddTail(new_node);
-	setting_lt_rb();
 }
 
 CMyGroup::~CMyGroup()

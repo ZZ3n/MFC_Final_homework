@@ -8,11 +8,10 @@ public:
 	CPoint LT, RB;
 
 	void setting_lt_rb();
-
+	void selected_group_rect(CDC & dc);
 
 	CMyGroup();
-	//메모리 누수에 주의하기! G 뒤에 H가 연결됨. \
-	 +) G와 H의 메모리가 해제됨.
+	//메모리 누수에 주의하기! G 뒤에 H가 연결됨. \ +) G와 H의 메모리가 해제됨.
 	CMyGroup(CMyGroup & G, CMyGroup & H);
 	CMyGroup(CMyShape * new_node);
 	~CMyGroup();

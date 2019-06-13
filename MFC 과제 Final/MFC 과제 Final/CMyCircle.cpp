@@ -39,7 +39,7 @@ bool CMyCircle::if_inner(CPoint pt)
 	dist2 = sqrt((pt.x - center.x)*(pt.x - center.x) +
 		(pt.y - center.y)*(pt.y - center.y));
 	if (dist2 <= radius)
-		return true;
+		return true; 
 	else
 		return false;
 }
@@ -55,6 +55,11 @@ void CMyCircle::selected_rect(CDC & dc)
 
 	dc.Rectangle(center.x - radius - 5,center.y + radius + 5,
 		center.x + radius + 5,center.y - radius - 5);
+}
+
+void CMyCircle::Move_To(CPoint pt)
+{
+	center += pt;
 }
 
 void CMyCircle::get_lt_rb(CPoint & lt, CPoint & rb)
