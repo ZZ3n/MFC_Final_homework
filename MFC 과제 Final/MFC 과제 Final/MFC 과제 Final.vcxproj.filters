@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Shapes_h">
+      <UniqueIdentifier>{004bc8a6-e61f-4f58-ba93-2f49eb3ff2d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes_cpp">
+      <UniqueIdentifier>{dd9a6082-2bb3-449d-ba25-79c8b25c7066}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MFC 과제 Final.h">
@@ -33,23 +39,23 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CMyShape.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CMyRect.h">
+    <ClInclude Include="CMyGroup.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CMyCircle.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Shapes_h</Filter>
     </ClInclude>
     <ClInclude Include="CMyCurve.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Shapes_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyRect.h">
+      <Filter>Shapes_h</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyShape.h">
+      <Filter>Shapes_h</Filter>
     </ClInclude>
     <ClInclude Include="CMyStar.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CMyGroup.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Shapes_h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,23 +71,23 @@
     <ClCompile Include="ChildView.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CMyShape.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CMyRect.cpp">
+    <ClCompile Include="CMyGroup.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CMyCircle.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Shapes_cpp</Filter>
     </ClCompile>
     <ClCompile Include="CMyCurve.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Shapes_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyRect.cpp">
+      <Filter>Shapes_cpp</Filter>
     </ClCompile>
     <ClCompile Include="CMyStar.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Shapes_cpp</Filter>
     </ClCompile>
-    <ClCompile Include="CMyGroup.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="CMyShape.cpp">
+      <Filter>Shapes_cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

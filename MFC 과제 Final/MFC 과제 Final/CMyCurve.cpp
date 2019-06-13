@@ -126,3 +126,28 @@ void CMyCurve::selected_rect(CDC & dc)
 	
 	dc.Rectangle(lt.x - 8, lt.y + 8, rb.x + 8, rb.y- 8);
 }
+void CMyCurve::get_lt_rb(CPoint & lt, CPoint & rb)
+{
+	POSITION pos = pts.GetHeadPosition();
+	CPoint pt = pts.GetAt(pos);
+	lt = pt;
+	rb = pt;
+
+	while (pos != NULL)
+	{
+		if (pt.x <= lt.x)
+			lt.x = pt.x;
+		if (pt.y >= lt.y)
+			lt.y = pt.y;
+
+		if (pt.x >= rb.x)
+			rb.x = pt.x;
+		if (pt.y <= rb.y)
+			rb.y = pt.y;
+
+		pt = pts.GetNext(pos);
+	}
+	lt.x -= 8;	lt.y += 8;
+	rb.x += 8;	rb.y -= 8;
+
+}

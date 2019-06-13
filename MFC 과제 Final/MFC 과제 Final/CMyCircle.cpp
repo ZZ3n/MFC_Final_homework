@@ -56,3 +56,9 @@ void CMyCircle::selected_rect(CDC & dc)
 	dc.Rectangle(center.x - radius - 5,center.y + radius + 5,
 		center.x + radius + 5,center.y - radius - 5);
 }
+
+void CMyCircle::get_lt_rb(CPoint & lt, CPoint & rb)
+{
+	lt = CPoint(center.x - radius - 5, center.y + radius + 5);
+	rb = CPoint(center.x + radius + 5, center.y - radius - 5);
+}

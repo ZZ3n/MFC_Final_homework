@@ -21,5 +21,7 @@ public:
 	virtual void set_mouse_move(CPoint pt) = 0;
 	virtual bool if_inner(CPoint pt) = 0;
 	virtual void selected_rect(CDC & dc) = 0;
+	// 참조-반환, get_lt_rb(lt,rb)
+	virtual void get_lt_rb(CPoint & lt,CPoint & rb) = 0;
 };
 

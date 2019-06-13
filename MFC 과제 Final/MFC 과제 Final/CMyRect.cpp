@@ -105,3 +105,31 @@ void CMyRect::selected_rect(CDC & dc)
 	dc.Rectangle(lt.x - SPACE, lt.y + SPACE, rb.x + SPACE, rb.y - SPACE);
 	
 }
+void CMyRect::get_lt_rb(CPoint & lt, CPoint & rb)
+{
+	int SPACE = 8;
+	if (m_pt1.x < m_pt2.x)
+	{
+		lt.x = m_pt1.x;
+		rb.x = m_pt2.x;
+	}
+	else
+	{
+		lt.x = m_pt2.x;
+		rb.x = m_pt1.x;
+	}
+
+	if (m_pt1.y > m_pt2.y)
+	{
+		lt.y = m_pt1.y;
+		rb.x = m_pt2.x;
+	}
+	else
+	{
+		lt.y = m_pt2.y;
+		rb.y = m_pt1.y;
+	}
+
+	lt.x -= SPACE; lt.y += SPACE;
+	rb.x += SPACE; rb.y -= SPACE;
+}
